@@ -39,7 +39,6 @@ int main() {
         return 0;
     }
 
-    // menu utama
     while(1) {
         system("cls");
         printf("===== PROGRAM MINIMARKET =====\n\n");
@@ -120,4 +119,5 @@ int main() {
 
     return 0;
 }
+
 
