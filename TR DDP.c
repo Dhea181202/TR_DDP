@@ -43,10 +43,10 @@ int main() {
     while(1) {
         system("cls");
         printf("===== PROGRAM MINIMARKET =====\n\n");
-        printf("1. Kelola Data Barang (CRUD)\n");
+        printf("1. Kelola Data Barang \n");
         printf("2. Transaksi Penjualan\n");
-        printf("3. Lihat Detail Transaksi (Struk)\n");
-        printf("4. Fitur Return Barang\n");
+        printf("3. Lihat Detail Transaksi \n");
+        printf("4. Return Barang\n");
         printf("5. Rumah Pola\n");
         printf("6. Bendera Negara\n");
         printf("7. Author\n");
@@ -120,3 +120,4 @@ int main() {
 
     return 0;
 }
+
