@@ -461,7 +461,7 @@ int main() {
                 printf("\n\n");
 
                 // --- KONFIGURASI ANIMASI ---
-                int speed = 500; // 500ms = 0.5 detik (Lambat & Halus)
+                int slow = 1000; // 500ms = 0.5 detik (Lambat & Halus)
                 char* marginLayar = "\t\t";
 
                 // 1. ATAP ATAS (CEROBONG)
@@ -475,7 +475,7 @@ int main() {
                     for (int j = 0; j < 5; j++) printf("%c", bahan);
                     printf(COLOR_RESET "\n");
 
-                    delay(speed);
+                    delay(slow);
                 }
 
                 // 2. ATAP TENGAH (HIJAU & PUTIH)
@@ -486,7 +486,7 @@ int main() {
 
                     // Bagian Hijau
                     printf(COLOR_GREEN);
-                    for (int j = 0; j < (2 * i + 1); j++) printf("%c", bahan);
+                    for (int j = 0; j < (2 * i + 3); j++) printf("%c", bahan);
                     printf(COLOR_RESET);
 
                     // Bagian Putih (Perpanjangan)
@@ -494,7 +494,7 @@ int main() {
                     for (int k = 0; k < 15; k++) printf("%c", bahan);
                     printf(COLOR_RESET "\n");
 
-                    delay(speed);
+                    delay(slow);
                 }
 
                 // 3. BADAN RUMAH (MERAH & UNGU)
@@ -502,15 +502,15 @@ int main() {
                     printf("%s", marginLayar);
                     // Kiri (Merah)
                     printf(COLOR_RED);
-                    for (int j = 0; j < 10; j++) printf("%c", bahan);
+                    for (int j = 0; j < 11; j++) printf("%c", bahan);
                     printf(COLOR_RESET);
 
                     // Kanan (Ungu)
                     printf(COLOR_PURPLE);
-                    for (int j = 0; j < 17; j++) printf("%c", bahan);
+                    for (int j = 0; j < 15; j++) printf("%c", bahan);
                     printf(COLOR_RESET "\n");
 
-                    delay(speed);
+                    delay(slow);
                 }
 
                 printf("\nRumah Selesai Dibangun!\n");
@@ -552,6 +552,9 @@ int main() {
             printf("==============================\n\n");
             printf("1. Dhea Adventri - 672021275\n");
             printf("2. Nathaniel Ananta Putra - 672024042\n"); // EDIT DISINI
+            printf("3. Alfine Argracia Tonapa - 672025233\n");
+            printf("4. Haryono Wibowo - 672025196\n");
+            printf("5. Kornelius Ani - 672025190\n");
             printf("\nTekan enter untuk kembali...");
             cleanBuffer(); getchar();
         }
