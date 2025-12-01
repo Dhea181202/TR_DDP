@@ -1,10 +1,7 @@
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-// --- KONFIGURASI DELAY (CROSS PLATFORM) ---
 // Bagian ini agar fungsi delay/sleep bisa jalan di Windows maupun Linux/Mac
 #ifdef _WIN32
     #include <windows.h>
@@ -18,7 +15,7 @@
     }
 #endif
 
-// --- DEFINISI WARNA (ANSI ESCAPE CODES) ---
+// --- DEFINISI WARNA 
 #define COLOR_RESET   "\x1b[0m"
 #define COLOR_RED     "\x1b[31m"
 #define COLOR_GREEN   "\x1b[32m"
@@ -29,7 +26,6 @@
 #define BG_RED        "\x1b[41m"
 #define BG_WHITE      "\x1b[47m"
 
-// --- STRUCT DATA ---
 struct Barang {
     int kode;
     char nama[50];
@@ -54,14 +50,12 @@ struct Transaksi {
     int metodePembayaran; // 1 = Cash, 2 = QRIS
 };
 
-// --- GLOBAL VARIABLES ---
 struct Barang daftarBarang[100];
 int jumlahBarang = 5;
 
 struct Transaksi riwayatTransaksi[100];
 int jumlahTransaksi = 0;
 
-// Fungsi untuk membersihkan layar
 void clearScreen() {
     #ifdef _WIN32
         system("cls");
@@ -70,7 +64,6 @@ void clearScreen() {
     #endif
 }
 
-// Fungsi untuk membersihkan buffer input
 void cleanBuffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
@@ -81,21 +74,19 @@ int main() {
     int pilih;
     int coba = 0;
 
-    // --- DATA DUMMY AWAL ---
     daftarBarang[0].kode = 1; strcpy(daftarBarang[0].nama, "Indomie Goreng"); daftarBarang[0].harga = 3500; daftarBarang[0].stok = 50;
     daftarBarang[1].kode = 2; strcpy(daftarBarang[1].nama, "Aqua 600ml"); daftarBarang[1].harga = 3000; daftarBarang[1].stok = 100;
     daftarBarang[2].kode = 3; strcpy(daftarBarang[2].nama, "Teh Pucuk"); daftarBarang[2].harga = 4000; daftarBarang[2].stok = 75;
     daftarBarang[3].kode = 4; strcpy(daftarBarang[3].nama, "Chitato"); daftarBarang[3].harga = 10000; daftarBarang[3].stok = 30;
     daftarBarang[4].kode = 5; strcpy(daftarBarang[4].nama, "Susu Ultra 250ml"); daftarBarang[4].harga = 5500; daftarBarang[4].stok = 40;
 
-    // --- LOGIN SYSTEM ---
+    // --- LOGIN 
     while(coba < 3) {
         clearScreen();
         printf("===== LOGIN MINIMARKET =====\n\n");
         printf("Username : "); scanf("%s", user);
         printf("Password : "); scanf("%s", pass);
 
-        // Hardcode security
         if(strcmp(user, "admin") == 0 && strcmp(pass, "admin123") == 0) {
             printf("\n" COLOR_GREEN "Login Berhasil!" COLOR_RESET "\n");
             printf("Tekan enter...");
@@ -460,7 +451,7 @@ int main() {
                 printf("\nSedang membangun...");
                 printf("\n\n");
 
-                // --- KONFIGURASI ANIMASI ---
+                //  KONFIGURASI ANIMASI 
                 int slow = 1000; // 500ms = 0.5 detik (Lambat & Halus)
                 char* marginLayar = "\t\t";
 
@@ -470,7 +461,6 @@ int main() {
                     // Spasi agar cerobong di tengah
                     for(int s=0; s < (tinggiRumah - 1); s++) printf(" ");
 
-                    // Gambar cerobong
                     printf(COLOR_WHITE);
                     for (int j = 0; j < 5; j++) printf("%c", bahan);
                     printf(COLOR_RESET "\n");
@@ -484,12 +474,10 @@ int main() {
                     // Spasi segitiga
                     for (int s = 0; s < (tinggiRumah - i - 1); s++) printf(" ");
 
-                    // Bagian Hijau
                     printf(COLOR_GREEN);
                     for (int j = 0; j < (2 * i + 3); j++) printf("%c", bahan);
                     printf(COLOR_RESET);
 
-                    // Bagian Putih (Perpanjangan)
                     printf(COLOR_WHITE);
                     for (int k = 0; k < 15; k++) printf("%c", bahan);
                     printf(COLOR_RESET "\n");
@@ -500,12 +488,10 @@ int main() {
                 // 3. BADAN RUMAH (MERAH & UNGU)
                 for (int i = 0; i < tinggiRumah; i++) {
                     printf("%s", marginLayar);
-                    // Kiri (Merah)
                     printf(COLOR_RED);
                     for (int j = 0; j < 11; j++) printf("%c", bahan);
                     printf(COLOR_RESET);
 
-                    // Kanan (Ungu)
                     printf(COLOR_PURPLE);
                     for (int j = 0; j < 15; j++) printf("%c", bahan);
                     printf(COLOR_RESET "\n");
@@ -580,3 +566,4 @@ int main() {
 
     return 0;
 }
+
