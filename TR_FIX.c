@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Bagian ini agar fungsi delay/sleep bisa jalan di Windows maupun Linux/Mac
+// Bagian ini agar fungsi delay/sleep bisa jalan 
 #ifdef _WIN32
     #include <windows.h>
     void delay(int milliseconds) {
@@ -566,4 +566,5 @@ int main() {
 
     return 0;
 }
+
 
